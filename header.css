@@ -103,3 +103,90 @@ header {
     transform: scale(1.2);
 }
 /* Media Queries for Responsiveness */
+
+
+ 
+/* For tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .cta-btn {
+    padding: 10px 20px;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    margin: 15px 0;
+  }
+
+  .houses {
+    flex-direction: column;
+  }
+
+  .house {
+    width: 90%;
+  }
+}
+
+/* For mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .header-content h1 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    padding: 5px 10px;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    padding: 8px 15px;
+    font-size: 1rem;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .houses {
+    flex-direction: column;
+  }
+
+  .house {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
