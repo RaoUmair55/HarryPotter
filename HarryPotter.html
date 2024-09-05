@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harry Potter Themed Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="header.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Wizarding World</h1>
+      <nav>
+        <ul>
+          <li><a href="HarryPotter.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Hogwarts Houses</a></li>
+          <li><a href="#">Quidditch</a></li>
+          <li><a href="spell.html">Spells & Potions</a></li>
+          <li><a href="magicalCreature.html">Magical Creatures</a></li>
+          <li><a href="#">Shop</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Hogwarts</h1>
+        <p>Discover the magic within</p>
+        <a href="#" class="cta-button">Enter the Magic</a>
+    </div>
+</section>
+
+
+ <!-- Explore Hogwarts Section -->
+<section class="explore-hogwarts">
+  <h2>Explore the World of Hogwarts</h2>
+  <div class="card-container">
+    <div class="card">
+      <img src="images/se01.jpeg" alt="Great Hall">
+      <h3>The Great Hall</h3>
+      <p>Discover where the sorting happens and the grand feasts are held.</p>
+    </div>
+    <div class="card">
+      <img src="images/TheLibrary.jpeg" alt="Hogwarts Library">
+      <h3>The Library</h3>
+      <p>Uncover magical books and secrets hidden within the library walls.</p>
+    </div>
+    <div class="card">
+      <img src="images/Pitch.jpeg" alt="Quidditch Pitch">
+      <h3>Quidditch Pitch</h3>
+      <p>Feel the excitement of flying broomsticks and fierce Quidditch matches.</p>
+    </div>
+  </div>
+  <div class="card-container">
+    <div class="card">
+      <img src="images/Forest.jpeg" alt="Great Hall">
+      <h3>The Forbidden Forest</h3>
+      <p> A dark, mysterious forest with towering trees, magical creatures, and an eerie, magical atmosphere</p>
+    </div>
+    <div class="card">
+      <img src="images/Castle.jpeg" alt="Hogwarts Library">
+      <h3>Hogwarts Castle</h3>
+      <p>An iconic view of Hogwarts Castle, standing majestically on a cliff with magical lights glowing from the windows.</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Hogwarts Houses Section -->
+<section class="hogwarts-houses">
+  <h2>Discover Your Hogwarts House</h2>
+  <div class="houses">
+    <div class="house gryffindor">
+      <div class="house-front">
+        <img src="images/Gryffindor.jpeg" alt="Gryffindor">
+        <h3>Gryffindor</h3>
+      </div>
+      <div class="house-back">
+        <p>Bravery, daring, nerve, and chivalry are the defining traits of Gryffindor!</p>
+      </div>
+    </div>
+
+    <div class="house hufflepuff">
+      <div class="house-front">
+        <img src="images/Hufflepuff .jpeg" alt="Hufflepuff">
+        <h3>Hufflepuff</h3>
+      </div>
+      <div class="house-back">
+        <p>Hufflepuffs are known for their dedication, patience, loyalty, and fair play.</p>
+      </div>
+    </div>
+
+    <div class="house ravenclaw">
+      <div class="house-front">
+        <img src="images/Ravenclaw.jpeg" alt="Ravenclaw">
+        <h3>Ravenclaw</h3>
+      </div>
+      <div class="house-back">
+        <p>Wit beyond measure is man's greatest treasure – the motto of Ravenclaw!</p>
+      </div>
+    </div>
+
+    <div class="house slytherin">
+      <div class="house-front">
+        <img src="images/Slytherin House.jpeg" alt="Slytherin">
+        <h3>Slytherin</h3>
+      </div>
+      <div class="house-back">
+        <p>Ambition, cunning, and resourcefulness are the hallmarks of Slytherin.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sorting Hat Section -->
+  <div class="sorting-hat">
+    <img src="images/SortingHat.jpeg" alt="Sorting Hat">
+    <p>Hover over the Sorting Hat to discover your house!</p>
+  </div>
+  <div id="houseReveal" class="house-reveal"></div>
+</section>
+
+
+<footer class="footer">
+  <h2>Hogwarts School of Witchcraft and Wizardry</h2>
+  <p>&copy; 2024 All rights reserved.</p>
+  <div class="social-icons">
+      <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+  </div>
+</footer>
+
+
+
+
+  <script>
+
+    // Define the possible Hogwarts houses
+const houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
+
+// Get elements
+const sortingHat = document.querySelector('.sorting-hat');
+const houseReveal = document.getElementById('houseReveal');
+
+// Function to randomly select a house
+function getRandomHouse() {
+    const randomIndex = Math.floor(Math.random() * houses.length);
+    return houses[randomIndex];
+}
+
+// Add event listener for hovering over the Sorting Hat
+sortingHat.addEventListener('mouseover', function() {
+    const selectedHouse = getRandomHouse();
+    houseReveal.innerText = `You belong to ${selectedHouse}!`;
+    houseReveal.style.display = 'block';
+});
+
+// Hide the house reveal when mouse leaves
+sortingHat.addEventListener('mouseout', function() {
+    houseReveal.style.display = 'none';
+});
+
+
+  </script>
+</body>
+</html>

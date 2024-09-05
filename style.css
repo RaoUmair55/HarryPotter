@@ -1,0 +1,527 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cinzel", serif;
+}
+
+body {
+  background-color: #1c1b29;
+  color: #fff;
+}
+
+
+/* Hero Section */
+/* Hero Section Styles */
+.hero {
+    background: url('images/pic-01.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin: 0;
+    color: #f9c740;
+    text-shadow: 0 0 20px #f9c740;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    color: #fff;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #f9c740;
+    text-decoration: none;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.4s, background 0.4s;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(235, 23, 23, 0.3) 20%, rgba(255,255,255,0) 60%);
+    transition: transform 0.6s;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 0;
+}
+
+.cta-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.cta-button:hover {
+    color: #000;
+    background: #fff;
+}
+
+.cta-button span {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-button:hover {
+    animation: magicGlow 1.5s infinite, particles 1.5s infinite;
+}
+
+@keyframes magicGlow {
+    0% { text-shadow: 0 0 10px #f9c740, 0 0 20px #f9c740, 0 0 30px #f9c740, 0 0 40px #f9c740; }
+    50% { text-shadow: 0 0 20px #f9c740, 0 0 30px #f9c740, 0 0 40px #f9c740, 0 0 50px #f9c740; }
+    100% { text-shadow: 0 0 10px #f9c740, 0 0 20px #f9c740, 0 0 30px #f9c740, 0 0 40px #f9c740; }
+}
+
+@keyframes particles {
+    0% { background: rgba(255, 255, 255, 0) }
+    50% { background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, rgba(255, 255, 255, 0) 50%); }
+    100% { background: rgba(255, 255, 255, 0) }
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.5) 0%, rgba(255, 215, 0, 0) 100%);
+    z-index: -1;
+    transition: opacity 0.6s;
+    opacity: 0;
+}
+
+.cta-button:hover::after {
+    opacity: 1;
+}
+/* Explore Hogwarts */
+.explore-hogwarts {
+  padding: 60px;
+  background-color: #121212;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-hogwarts h2 {
+  font-size: 3rem;
+  color: #f9c740;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  background-color: rgba(51, 51, 51, 0.9);
+  color: #f9c740;
+  width: 30%;
+  padding: 20px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 15px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(249, 199, 64, 0.4);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(249, 199, 64, 0.7);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+}
+
+/* Add magical glowing sparkles background */
+.explore-hogwarts::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 300%;
+  height: 300%;
+  background: url("https://www.transparenttextures.com/patterns/stardust.png");
+  opacity: 0.3;
+  z-index: 1;
+  animation: sparkle 10s linear infinite;
+}
+
+/* Animating the sparkles */
+@keyframes sparkle {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(-500px) translateY(-500px);
+  }
+}
+
+/* Responsive Design for Explore Hogwarts */
+
+/* For tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+  }
+}
+
+/* For mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+
+  .explore-hogwarts h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Hogwarts Houses Section */
+/* Hogwarts Houses Section */
+.hogwarts-houses {
+    padding: 60px;
+    background-color: #282828;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hogwarts-houses h2 {
+    color: #f9c740;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px #f9c740;
+  }
+  
+  .houses {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .house {
+    width: 250px;
+    height: 350px;
+    margin: 20px;
+    position: relative;
+    perspective: 1000px;
+  }
+  
+  .house-front, .house-back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    transition: transform 0.6s ease;
+    box-shadow: 0 0 30px rgba(249, 199, 64, 0.7);
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .house-front {
+    background: rgba(51, 51, 51, 0.9);
+    z-index: 1;
+  }
+  
+  .house-back {
+    background: linear-gradient(145deg, rgba(249, 199, 64, 0.7), rgba(49, 49, 49, 0.9));
+    transform: rotateY(180deg);
+    z-index: 0;
+  }
+  
+  .house:hover .house-front {
+    transform: rotateY(180deg);
+  }
+  
+  .house:hover .house-back {
+    transform: rotateY(0);
+  }
+  
+  .house img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  .house h3 {
+    font-size: 1.8rem;
+    color: #f9c740;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px #f9c740;
+  }
+  
+  .house p {
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+  }
+  
+  /* Sorting Hat */
+  .sorting-hat {
+    margin-top: 50px;
+  }
+  
+  .sorting-hat img {
+    width: 100px;
+    cursor: pointer;
+    animation: glow 2s ease-in-out infinite;
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      filter: drop-shadow(0 0 10px #f9c740);
+    }
+    50% {
+      filter: drop-shadow(0 0 20px #f9c740);
+    }
+  }
+  
+  .sorting-hat p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #f9c740;
+    text-shadow: 0 0 5px #f9c740;
+  }
+  
+  /* Floating Magical Particles */
+  .hogwarts-houses::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: -200px;
+    width: 500%;
+    height: 500%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.2;
+    z-index: 0;
+    animation: floatParticles 15s linear infinite;
+  }
+
+
+
+
+  .sorting-hat img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    cursor: pointer;
+    animation: glow 2s ease-in-out infinite;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .sorting-hat img:hover {
+    transform: scale(1.1);
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      filter: drop-shadow(0 0 10px #f9c740);
+    }
+    50% {
+      filter: drop-shadow(0 0 20px #f9c740);
+    }
+  }
+  
+  /* Hidden House Reveal */
+  .house-reveal {
+    display: none;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #f9c740;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #f9c740;
+    padding: 10px;
+  }
+  
+
+
+
+
+  
+  @keyframes floatParticles {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-500px, -500px);
+    }
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* Tablets (max-width: 768px) */
+  @media (max-width: 768px) {
+    .houses {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .house {
+      width: 80%;
+      height: 300px;
+    }
+  
+    .hogwarts-houses h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  /* Mobile (max-width: 480px) */
+  @media (max-width: 480px) {
+    .house {
+      width: 100%;
+      height: 300px;
+    }
+  
+    .hogwarts-houses h2 {
+      font-size: 1.8rem;
+    }
+  }
+ 
+/* For tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .cta-btn {
+    padding: 10px 20px;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    margin: 15px 0;
+  }
+
+  .houses {
+    flex-direction: column;
+  }
+
+  .house {
+    width: 90%;
+  }
+}
+
+/* For mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .header-content h1 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    padding: 5px 10px;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    padding: 8px 15px;
+    font-size: 1rem;
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .houses {
+    flex-direction: column;
+  }
+
+  .house {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
